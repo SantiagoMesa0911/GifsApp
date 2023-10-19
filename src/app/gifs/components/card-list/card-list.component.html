@@ -1,10 +1,14 @@
 <div class="row">
-    <div class="col-md-3 p-3 col-sm-6">
+    <div *ngFor="let gif of gifs" class="col-md-3 p-3 col-sm-6">
         <div class="card mb-2 text-center bg-dark">
-            <!-- TOOD:CREAR IMAGEN -->
+            <img 
+            [src]="gif.images.downsized_medium.url" 
+            [alt]="gif.title"
+            class="img-fluid card-img-top" 
+            srcset="">
 
             <div class="card-body text-white">
-                <p class="card-text">Card list of gifs</p>
+                <p class="card-text">{{gif.title}}</p>
             </div>
         </div>
     </div>
